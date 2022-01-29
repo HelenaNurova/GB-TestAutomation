@@ -1,0 +1,284 @@
+{
+  "id": "4465b2c8-d1fa-4722-8d7b-ebafeaed626c",
+  "version": "2.0",
+  "name": "HMshop",
+  "url": "https://www2.hm.com/ru_ru/index.html",
+  "tests": [{
+    "id": "b87491bf-386e-4351-bad5-a6b71aa029d8",
+    "name": "Авторизация на сайте",
+    "commands": [{
+      "id": "1a5219e5-61d2-411c-9322-3152189cb4f9",
+      "comment": "Открыть сайт H&M",
+      "command": "open",
+      "target": "https://www2.hm.com/ru_ru/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d50d3892-ed70-47ca-b9eb-5a7922ce049f",
+      "comment": "В верхнем меню выбрать пункт “Войти” ",
+      "command": "click",
+      "target": "linkText=Войти",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "225d3550-11bc-4f84-95e2-18e89180645c",
+      "comment": "В появившемся окне выбрать поле \"Эл. почта\"",
+      "command": "click",
+      "target": "id=modal-txt-signin-email",
+      "targets": [
+        ["id=modal-txt-signin-email", "id"],
+        ["name=j_username", "name"],
+        ["css=#modal-txt-signin-email", "css:finder"],
+        ["xpath=//input[@id='modal-txt-signin-email']", "xpath:attributes"],
+        ["xpath=//form[@id='modal-theLoginForm']/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ccaf38c-d9a9-4900-8896-cc52cff0b118",
+      "comment": "Ввести валидный email",
+      "command": "type",
+      "target": "id=modal-txt-signin-email",
+      "targets": [],
+      "value": "whitebars70@rambler.ru"
+    }, {
+      "id": "821a719b-f25c-47e8-a65a-994e7972e219",
+      "comment": "Выбрать поле \"Пароль\"",
+      "command": "click",
+      "target": "id=modal-txt-signin-password",
+      "targets": [
+        ["id=modal-txt-signin-password", "id"],
+        ["name=j_password", "name"],
+        ["css=#modal-txt-signin-password", "css:finder"],
+        ["xpath=//input[@id='modal-txt-signin-password']", "xpath:attributes"],
+        ["xpath=//form[@id='modal-theLoginForm']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "83139d0b-0ebb-44d4-b302-0edb88e2b028",
+      "comment": "Ввести валидный пароль.",
+      "command": "type",
+      "target": "id=modal-txt-signin-password",
+      "targets": [],
+      "value": "12345678Aa"
+    }, {
+      "id": "06c92369-28ed-45b5-a7c0-0abea699e51f",
+      "comment": "Нажать на кнопку \"Войти\"",
+      "command": "click",
+      "target": "css=.js-set-session-storage",
+      "targets": [
+        ["css=.js-set-session-storage", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//form[@id='modal-theLoginForm']/button", "xpath:idRelative"],
+        ["xpath=//div/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ff35e5c-5625-48a0-a94c-c83e01f053d5",
+      "comment": "",
+      "command": "assert",
+      "target": "/html/body/header/nav/ul[1]/li[1]/div/div[2]/ul/li[1]/a",
+      "targets": [],
+      "value": "null"
+    }]
+  }, {
+    "id": "aab296f8-2190-4d8b-bc9f-aa288477d5dc",
+    "name": "Добавление товара в корзину",
+    "commands": [{
+      "id": "9416d8a0-b5a0-4177-92d7-bf510bc62aa6",
+      "comment": "",
+      "command": "open",
+      "target": "https://www2.hm.com/ru_ru/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6699dbfd-ef3f-4d92-b869-1506af840988",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c8f72791-a46f-4bbf-8444-c33420634b40",
+      "comment": "",
+      "command": "click",
+      "target": "css=.menu__super--open > .menu__super-link > span",
+      "targets": [
+        ["css=.menu__super--open > .menu__super-link > span", "css:finder"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Женщины')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "35934625-761b-4ad6-9c42-320f537a67ac",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Просмотреть все",
+      "targets": [
+        ["linkText=Просмотреть все", "linkText"],
+        ["css=.list-group:nth-child(1) .item:nth-child(1) > .link", "css:finder"],
+        ["xpath=(//a[contains(text(),'Просмотреть все')])[13]", "xpath:link"],
+        ["xpath=//ul[@id='menu-links']/li/ul/li/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/ru_ru/zhenshchiny/novye-postupleniya/view-all.html')])[2]", "xpath:href"],
+        ["xpath=//aside/nav/ul/li/ul/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9289b762-8915-4642-af48-993896d8fc66",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,400)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2f8d718-490c-4f8d-baec-711b606aa3b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.product-item:nth-child(1) .item-image",
+      "targets": [
+        ["css=.product-item:nth-child(1) .item-image", "css:finder"],
+        ["xpath=//img[@alt='Кардиган в рубчикМодель']", "xpath:img"],
+        ["xpath=//div[@id='page-content']/div/div[3]/ul/li/article/div/a/img", "xpath:idRelative"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8f1758f-fe81-4ae8-bea4-59dd94a43929",
+      "comment": "",
+      "command": "click",
+      "target": "css=.trigger-button > .value",
+      "targets": [
+        ["css=.trigger-button > .value", "css:finder"],
+        ["xpath=//div[@id='picker-1']/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Выбрать размер')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "38a48caf-7b6f-4c84-a69c-8c4f666592e1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.item:nth-child(3) .value",
+      "targets": [
+        ["css=.item:nth-child(3) .value", "css:finder"],
+        ["xpath=//div[@id='picker-1']/ul/li[3]/div/button/span", "xpath:idRelative"],
+        ["xpath=//li[3]/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7de9e2b2-c4dd-47be-a4cf-daa523d1907c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.icon-shopping-bag-white",
+      "targets": [
+        ["css=.icon-shopping-bag-white", "css:finder"],
+        ["xpath=//main[@id='main-content']/div[2]/div[2]/div/div/div/div[3]/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,' Добавить')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "56849cb4-8d72-4495-b2db-1764c63f0c14",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Корзина(1)",
+      "targets": [
+        ["linkText=Корзина(1)", "linkText"],
+        ["css=.menu__bag", "css:finder"],
+        ["xpath=//a[contains(@href, '/ru_ru/cart')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Корзина(1)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d34a37af-ba62-415a-8689-92e1d447746f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.Actions-module--actions__1S8Uk",
+      "targets": [
+        ["css=.Actions-module--actions__1S8Uk", "css:finder"],
+        ["xpath=//div[@id='sidebar-sticky-boundary']/section/div/ul/li/article/div[2]", "xpath:idRelative"],
+        ["xpath=//article/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3a1b641-9161-4406-95ce-404be273a9e9",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "//*[@id=\"sidebar-sticky-boundary\"]/section[1]/div/ul/li/article/div[2]/div/div/div/select",
+      "targets": [],
+      "value": "1"
+    }]
+  }, {
+    "id": "2ba00237-d81b-4194-a6f7-72bd83704de8",
+    "name": "Удаление товара из корзины",
+    "commands": [{
+      "id": "631db296-cae5-42f9-98c1-28f4b9105315",
+      "comment": "",
+      "command": "open",
+      "target": "https://www2.hm.com/ru_ru/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a3641fa-e906-4544-90e3-3972db949d17",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0aeede1-42d9-46ae-9f60-36de2c2ba83a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Корзина(1)",
+      "targets": [
+        ["linkText=Корзина(2)", "linkText"],
+        ["css=.menu__bag", "css:finder"],
+        ["xpath=//a[contains(@href, '/ru_ru/cart')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Корзина(2)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aaa15a45-cb4c-4f78-8f42-7383f7fdcf3b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.CartItem-module--removeButton__3VKqO > .IconWrapper-module--icon__2Xg1f",
+      "targets": [
+        ["css=.CartItem-module--removeButton__3VKqO > .IconWrapper-module--icon__2Xg1f", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "788267af-472a-4518-bfda-c3ce034bbdea",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Корзина(0)",
+      "targets": [
+        ["linkText=Корзина(0)", "linkText"],
+        ["css=.menu__bag", "css:finder"],
+        ["xpath=//a[contains(@href, '/ru_ru/cart')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Корзина(0)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c53c7be-1b6b-4b0a-bc06-39a8a726d631",
+      "comment": "",
+      "command": "assert",
+      "target": "//*[@id=\"sidebar-sticky-boundary\"]/section/div/div/div[1]/div[2]/table/tfoot/tr/td",
+      "targets": [],
+      "value": "null"
+    }]
+  }],
+  "suites": [{
+    "id": "7d980b05-f5cb-432c-99e6-2814d9bbd7b7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www2.hm.com/", "https://www2.hm.com/ru_ru/index.html"],
+  "plugins": []
+}
